@@ -1,5 +1,5 @@
 # CodeGenPerfTests
-Code smaples for presentation "Code generation for performance optimization". The author is Igor Chevdar
+Code smaples for presentation "Code generation for performance optimization". The author of original benchmarks is Igor Chevdar
 ### Regex
 Examples of regex performance benchmarks: http://lh3lh3.users.sourceforge.net/reb.shtml.
 ### Xsd
