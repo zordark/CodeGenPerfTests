@@ -29,6 +29,17 @@ namespace Expressions
                                                 }
                                         }
                                 }
+                            ,
+                            new TestClassB
+                            {
+                                C = new TestClassC
+                                {
+                                    ArrayD = new[]
+                                    {
+                                        new TestClassD {X = 5}
+                                    }
+                                }
+                            }
                         }
                 };
         }

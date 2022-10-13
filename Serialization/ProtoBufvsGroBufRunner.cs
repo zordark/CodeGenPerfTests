@@ -1,13 +1,13 @@
 using System;
 using System.Diagnostics;
-
 using BenchmarkDotNet.Attributes;
-
+using BenchmarkDotNet.Configs;
 using Serialization.TestData.Invoic;
 using Serialization.TestData.Orders;
 
 namespace Serialization
 {
+    [GroupBenchmarksBy(BenchmarkLogicalGroupRule.ByCategory)]
     public class ProtoBufvsGroBufRunner
     {
         public void Test()
@@ -19,36 +19,42 @@ namespace Serialization
             Console.WriteLine(protobufRunner.Serialize() + protobufRunnerStringLeafs.Serialize());
         }
 
-        [Benchmark]
+        [BenchmarkCategory("Serialization"), Benchmark(Baseline = true)]
         public int GroBufSerialize()
         {
             return grobufRunner.Serialize() + grobufRunnerStringLeafs.Serialize();
         }
 
-        [Benchmark]
+        [BenchmarkCategory("Deserialization"), Benchmark(Baseline = true)]
         public object GroBufDeserialize()
         {
-            return grobufRunner.Deserialize() ?? grobufRunnerStringLeafs.Deserialize();
+            var obj1 = grobufRunner.Deserialize();
+            var obj2 = grobufRunnerStringLeafs.Deserialize();
+            var result = new {obj1 , obj2};
+            return result;
         }
 
-        [Benchmark]
+        [BenchmarkCategory("Serialization"), Benchmark]
         public int ProtoBufSerialize()
         {
             return protobufRunner.Serialize() + protobufRunnerStringLeafs.Serialize();
         }
 
-        [Benchmark]
+        [BenchmarkCategory("Deserialization"), Benchmark]
         public object ProtoBufDeserialize()
         {
-            return protobufRunner.Deserialize() ?? protobufRunnerStringLeafs.Deserialize();
+            var obj1 = protobufRunner.Deserialize();
+            var obj2 = protobufRunnerStringLeafs.Deserialize();
+            var result = new { obj1, obj2 };
+            return result;
         }
 
-        [Setup]
+        [GlobalSetup]
         public void Setup()
         {
-            switch(mode)
+            switch (mode)
             {
-            case "small":
+                case "small":
                 {
                     var objects = Generate<Orders>(10, 30, 5, 2);
                     grobufRunner = new GroBufRunner<Orders>(objects);
@@ -57,7 +63,7 @@ namespace Serialization
                     protobufRunnerStringLeafs = new ProtoBufRunner<Invoic>(new Invoic[0]);
                     break;
                 }
-            case "big":
+                case "big":
                 {
                     var objects = Generate<Orders>(10, 60, 10, 5);
                     grobufRunner = new GroBufRunner<Orders>(objects);
@@ -66,7 +72,7 @@ namespace Serialization
                     protobufRunnerStringLeafs = new ProtoBufRunner<Invoic>(new Invoic[0]);
                     break;
                 }
-            case "small_strings":
+                case "small_strings":
                 {
                     var objects = Generate<Invoic>(10, 30, 5, 2);
                     grobufRunner = new GroBufRunner<Orders>(new Orders[0]);
@@ -76,7 +82,7 @@ namespace Serialization
                     protobufRunnerStringLeafs = new ProtoBufRunner<Invoic>(objects);
                     break;
                 }
-            case "big_strings":
+                case "big_strings":
                 {
                     var objects = Generate<Invoic>(10, 60, 10, 5);
                     grobufRunner = new GroBufRunner<Orders>(new Orders[0]);
@@ -85,7 +91,7 @@ namespace Serialization
                     protobufRunnerStringLeafs = new ProtoBufRunner<Invoic>(objects);
                     break;
                 }
-            case "small_mixed":
+                case "small_mixed":
                 {
                     var objects = Generate<Orders>(20, 30, 5, 2);
                     grobufRunner = new GroBufRunner<Orders>(objects);
@@ -95,7 +101,7 @@ namespace Serialization
                     protobufRunnerStringLeafs = new ProtoBufRunner<Invoic>(objectsStringLeafs);
                     break;
                 }
-            case "big_mixed":
+                case "big_mixed":
                 {
                     var objects = Generate<Orders>(2, 60, 10, 5);
                     grobufRunner = new GroBufRunner<Orders>(objects);
@@ -113,7 +119,7 @@ namespace Serialization
             var random = new Random(54717651);
             var objects = new T[n];
             objects[0] = TestHelpers.GenerateRandomTrash<T>(random, fillRate, stringsLength, arraysSize);
-            for(int i = 1; i < objects.Length; ++i)
+            for (int i = 1; i < objects.Length; ++i)
                 objects[i] = TestHelpers.GenerateRandomTrash<T>(random, fillRate, stringsLength, arraysSize);
             return objects;
         }
@@ -123,7 +129,7 @@ namespace Serialization
         private IRunner protobufRunner;
         private IRunner protobufRunnerStringLeafs;
 
-        [Params("big_mixed")]
+        [Params("big_mixed")] 
         public string mode;
     }
 }

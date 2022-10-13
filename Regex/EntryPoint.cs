@@ -2,9 +2,9 @@
 using System.Linq;
 using System.Reflection;
 using System.Text;
-
 using BenchmarkDotNet.Attributes;
 using BenchmarkDotNet.Configs;
+using BenchmarkDotNet.Environments;
 using BenchmarkDotNet.Jobs;
 using BenchmarkDotNet.Running;
 
@@ -68,14 +68,19 @@ namespace Regex
         {
             BenchmarkRunner.Run<EntryPoint>(
                 ManualConfig.Create(DefaultConfig.Instance)
-                            .With(Job.LegacyJitX86)
-                            .With(Job.LegacyJitX64)
-                            .With(Job.RyuJitX64)
-                            .With(Job.Mono)
+                    
+                    //.AddJob(Job.Dry.WithPlatform(Platform.X86).WithJit(Jit.LegacyJit).WithRuntime(ClrRuntime.Net48))
+                    .AddJob(Job.ShortRun.WithPlatform(Platform.X64).WithJit(Jit.LegacyJit).WithRuntime(ClrRuntime.Net48))
+                    .AddJob(Job.ShortRun.WithPlatform(Platform.X64).WithJit(Jit.LegacyJit).WithRuntime(CoreRuntime.Core31))
+                    .AddJob(Job.ShortRun.WithPlatform(Platform.X64).WithJit(Jit.LegacyJit).WithRuntime(CoreRuntime.Core60))
+                    .AddJob(Job.ShortRun.WithPlatform(Platform.X64).WithJit(Jit.RyuJit).WithRuntime(ClrRuntime.Net48))
+                    .AddJob(Job.ShortRun.WithPlatform(Platform.X64).WithJit(Jit.RyuJit).WithRuntime(CoreRuntime.Core31))
+                    .AddJob(Job.ShortRun.WithPlatform(Platform.X64).WithJit(Jit.RyuJit).WithRuntime(CoreRuntime.Core60))
+                    .AddJob(Job.ShortRun.WithPlatform(Platform.X64).WithJit(Jit.Llvm).WithRuntime(new MonoRuntime("mono", "c:\\Program Files\\Mono\\bin\\mono.exe")))
                 );
         }
 
-        [Setup]
+        [GlobalSetup]
         public void Setup()
         {
             switch(type)

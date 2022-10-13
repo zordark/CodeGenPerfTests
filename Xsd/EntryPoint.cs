@@ -4,6 +4,8 @@ using System.Text;
 
 using BenchmarkDotNet.Attributes;
 using BenchmarkDotNet.Configs;
+using BenchmarkDotNet.Environments;
+using BenchmarkDotNet.Exporters;
 using BenchmarkDotNet.Jobs;
 using BenchmarkDotNet.Running;
 
@@ -11,6 +13,14 @@ namespace Xsd
 {
     public class EntryPoint
     {
+        static EntryPoint()
+        {
+            var encodingProvider = CodePagesEncodingProvider.Instance;
+            Encoding.RegisterProvider(encodingProvider);
+
+            encoding = Encoding.GetEncoding(1251);
+        }
+
         private static byte[] ReadResource(string name)
         {
             string resourceName = "Xsd.Data." + name;
@@ -26,13 +36,16 @@ namespace Xsd
         public static void Main(string[] args)
         {
             //new EntryPoint().Test();
+
             BenchmarkRunner.Run<EntryPoint>(
                 ManualConfig.Create(DefaultConfig.Instance)
-                            .With(Job.LegacyJitX86)
-                            .With(Job.LegacyJitX64)
-                            .With(Job.RyuJitX64)
-                            .With(Job.Mono)
-                );
+                    .AddExporter(RPlotExporter.Default)
+                    .AddJob(Job.ShortRun.WithPlatform(Platform.X64).WithJit(Jit.LegacyJit).WithRuntime(ClrRuntime.Net48))
+                    .AddJob(Job.ShortRun.WithPlatform(Platform.X64).WithJit(Jit.RyuJit).WithRuntime(ClrRuntime.Net48))
+                    .AddJob(Job.ShortRun.WithPlatform(Platform.X64).WithJit(Jit.RyuJit).WithRuntime(CoreRuntime.Core31))
+                    .AddJob(Job.ShortRun.WithPlatform(Platform.X64).WithJit(Jit.RyuJit).WithRuntime(CoreRuntime.Core60))
+                    .AddJob(Job.ShortRun.WithPlatform(Platform.X64).WithJit(Jit.Llvm).WithRuntime(new MonoRuntime("mono", "c:\\Program Files\\Mono\\bin\\mono.exe")))
+            );
         }
 
         public void Test()
@@ -42,7 +55,7 @@ namespace Xsd
             Console.WriteLine("xsd: {0}\r\ninlined automaton: {1}", xsd, inlinedAutomaton);
         }
 
-        // Время работы этого метода нужно вычесть из каждого бенчмарка - это некий сетап, не являющийся частью алгоритма
+        // The execution time of this method should be subtracted from execution time other benchmarks methods - this method is kind of setup and is not part of algorithm
         [Benchmark(Baseline = true)]
         public int Scan()
         {
@@ -65,7 +78,7 @@ namespace Xsd
         private static byte[] xsd1 = ReadResource("110201.xsd");
         private static byte[] xml1 = ReadResource("110201.xml");
         // ReSharper restore FieldCanBeMadeReadOnly.Local
-        public static readonly Encoding encoding = Encoding.GetEncoding(1251);
+        public static readonly Encoding encoding;
 
         private readonly _110210_AutomatonRunner inlinedAutomatonRunner = new _110210_AutomatonRunner(xml1);
         private readonly XsdRunner xsdRunner = new XsdRunner(xml1, xsd1, true);

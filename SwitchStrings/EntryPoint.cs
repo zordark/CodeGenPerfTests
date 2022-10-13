@@ -2,6 +2,7 @@
 
 using BenchmarkDotNet.Attributes;
 using BenchmarkDotNet.Configs;
+using BenchmarkDotNet.Environments;
 using BenchmarkDotNet.Jobs;
 using BenchmarkDotNet.Running;
 
@@ -13,18 +14,21 @@ namespace SwitchStrings
     {
         public static void Main()
         {
-//            var test = new EntryPoint();
-//            test.numberOfKeys = 1000;
-//            test.Setup();
-//            test.Test();
-//            return;
+            //            var test = new EntryPoint();
+            //            test.numberOfKeys = 1000;
+            //            test.Setup();
+            //            test.Test();
+            //            return;
+
             BenchmarkRunner.Run<EntryPoint>(
                 ManualConfig.Create(DefaultConfig.Instance)
-                            .With(Job.LegacyJitX86)
-                            .With(Job.LegacyJitX64)
-                            .With(Job.RyuJitX64)
-                            .With(Job.Mono)
-                );
+                    .AddJob(Job.ShortRun.WithPlatform(Platform.X64).WithJit(Jit.LegacyJit).WithRuntime(ClrRuntime.Net48))
+                    .AddJob(Job.ShortRun.WithPlatform(Platform.X64).WithJit(Jit.RyuJit).WithRuntime(ClrRuntime.Net48))
+                    .AddJob(Job.ShortRun.WithPlatform(Platform.X64).WithJit(Jit.RyuJit).WithRuntime(CoreRuntime.Core31))
+                    .AddJob(Job.ShortRun.WithPlatform(Platform.X64).WithJit(Jit.RyuJit).WithRuntime(CoreRuntime.Core60))
+                    .AddJob(Job.ShortRun.WithPlatform(Platform.X64).WithJit(Jit.Llvm).WithRuntime(new MonoRuntime("mono", "c:\\Program Files\\Mono\\bin\\mono.exe")))
+            );
+
         }
 
         public void Test()
@@ -87,7 +91,7 @@ namespace SwitchStrings
             return runner.Run_UnrolledBSWithFastHash();
         }
 
-        [Setup]
+        [GlobalSetup]
         public void Setup()
         {
             runner = new Runner(numberOfKeys, 283767);

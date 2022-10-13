@@ -2,6 +2,7 @@
 
 using BenchmarkDotNet.Attributes;
 using BenchmarkDotNet.Configs;
+using BenchmarkDotNet.Environments;
 using BenchmarkDotNet.Jobs;
 using BenchmarkDotNet.Running;
 
@@ -13,13 +14,15 @@ namespace SwitchChars
         {
             //new EntryPoint().Test();
             //return;
+
             BenchmarkRunner.Run<EntryPoint>(
                 ManualConfig.Create(DefaultConfig.Instance)
-                            .With(Job.LegacyJitX86)
-                            .With(Job.LegacyJitX64)
-                            .With(Job.RyuJitX64)
-                            .With(Job.Mono)
-                );
+                    .AddJob(Job.ShortRun.WithPlatform(Platform.X64).WithJit(Jit.LegacyJit).WithRuntime(ClrRuntime.Net48))
+                    .AddJob(Job.ShortRun.WithPlatform(Platform.X64).WithJit(Jit.RyuJit).WithRuntime(ClrRuntime.Net48))
+                    .AddJob(Job.ShortRun.WithPlatform(Platform.X64).WithJit(Jit.RyuJit).WithRuntime(CoreRuntime.Core31))
+                    .AddJob(Job.ShortRun.WithPlatform(Platform.X64).WithJit(Jit.RyuJit).WithRuntime(CoreRuntime.Core60))
+                    .AddJob(Job.ShortRun.WithPlatform(Platform.X64).WithJit(Jit.Llvm).WithRuntime(new MonoRuntime("mono", "c:\\Program Files\\Mono\\bin\\mono.exe")))
+            );
         }
 
         public void Test()
@@ -35,7 +38,7 @@ namespace SwitchChars
             Console.WriteLine(PerfectHashtable());
         }
 
-        // Время работы этого метода нужно вычесть из каждого бенчмарка - это некий сетап, не являющийся частью алгоритма
+        // The execution time of this method should be subtracted from execution time other benchmarks methods - this method is kind of setup and is not part of algorithm
         [Benchmark(Baseline = true)]
         public int Empty()
         {
@@ -84,7 +87,7 @@ namespace SwitchChars
             return runner.Run_PerfectHashtable();
         }
 
-        [Setup]
+        [GlobalSetup]
         public void SetUp()
         {
             runner = new Runner(keysSetup / 1000, keysSetup % 1000, 123456);

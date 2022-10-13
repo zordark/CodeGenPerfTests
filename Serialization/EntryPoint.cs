@@ -7,6 +7,7 @@ using System.Xml;
 
 using BenchmarkDotNet.Attributes;
 using BenchmarkDotNet.Configs;
+using BenchmarkDotNet.Environments;
 using BenchmarkDotNet.Jobs;
 using BenchmarkDotNet.Running;
 
@@ -17,30 +18,34 @@ using Serialization.Static;
 
 namespace Serialization
 {
+    [GroupBenchmarksBy(BenchmarkLogicalGroupRule.ByCategory)]
     public class EntryPoint
     {
         public static void Main(string[] args)
         {
-//            new EntryPoint().Test();
-//            return;
-            //new ProtoBufvsGroBufRunner().Test();
-            //return;
-//            BenchmarkRunner.Run<EntryPoint>(
-//                ManualConfig.Create(DefaultConfig.Instance)
-//                            .With(Job.LegacyJitX86)
-//                            .With(Job.LegacyJitX64)
-//                            .With(Job.RyuJitX64)
-//                            .With(Job.Mono)
-//                );
-//            new ProtoBufvsGroBufRunner().Test();
-//            return;
+            BenchmarkRunner.Run<EntryPoint>(
+                ManualConfig.Create(DefaultConfig.Instance)
+                    .AddJob(Job.ShortRun.WithPlatform(Platform.X64).WithJit(Jit.LegacyJit).WithRuntime(ClrRuntime.Net48))
+                    .AddJob(Job.ShortRun.WithPlatform(Platform.X64).WithJit(Jit.RyuJit).WithRuntime(ClrRuntime.Net48))
+                    .AddJob(Job.ShortRun.WithPlatform(Platform.X64).WithJit(Jit.RyuJit).WithRuntime(CoreRuntime.Core31))
+                    .AddJob(Job.ShortRun.WithPlatform(Platform.X64).WithJit(Jit.RyuJit).WithRuntime(CoreRuntime.Core60))
+                    .AddJob(Job.ShortRun.WithPlatform(Platform.X64).WithJit(Jit.Llvm).WithRuntime(new MonoRuntime("mono", "c:\\Program Files\\Mono\\bin\\mono.exe")))
+            );
+
             BenchmarkRunner.Run<ProtoBufvsGroBufRunner>(
                 ManualConfig.Create(DefaultConfig.Instance)
-                            .With(Job.LegacyJitX86)
-                            .With(Job.LegacyJitX64)
-                            .With(Job.RyuJitX64)
-                            .With(Job.Mono)
-                );
+                    .AddJob(Job.ShortRun.WithPlatform(Platform.X64).WithJit(Jit.LegacyJit).WithRuntime(ClrRuntime.Net48))
+                    .AddJob(Job.ShortRun.WithPlatform(Platform.X64).WithJit(Jit.RyuJit).WithRuntime(ClrRuntime.Net48))
+                    .AddJob(Job.ShortRun.WithPlatform(Platform.X64).WithJit(Jit.RyuJit).WithRuntime(CoreRuntime.Core31))
+                    .AddJob(Job.ShortRun.WithPlatform(Platform.X64).WithJit(Jit.RyuJit).WithRuntime(CoreRuntime.Core60))
+                    .AddJob(Job.ShortRun.WithPlatform(Platform.X64).WithJit(Jit.Llvm).WithRuntime(new MonoRuntime("mono", "c:\\Program Files\\Mono\\bin\\mono.exe")))
+            );
+
+            // new EntryPoint().Test();
+            // return;
+            // new ProtoBufvsGroBufRunner().Test();
+            // return;
+
             //var data = new StaticSerializer().Serialize(new Flat {Number = 1, Room = new Room {Area = 100}});
             //var flat = new DynamicSerializer().Deserialize<Flat>(data);
             //Console.WriteLine(flat.Number);
@@ -51,27 +56,27 @@ namespace Serialization
         {
             flats = new Flat[100];
             var random = new Random(123123);
-            for(int i = 0; i < flats.Length; ++i)
+            for (int i = 0; i < flats.Length; ++i)
             {
                 flats[i] = new Flat();
                 flats[i].Number = random.Next();
-                if(random.Next(5) > 0)
+                if (random.Next(5) > 0)
                 {
                     flats[i].Kitchen = new Room
-                        {
-                            NumberOfDoors = random.Next(),
-                            NumberOfWindows = random.Next(),
-                            Area = random.Next()
-                        };
+                    {
+                        NumberOfDoors = random.Next(),
+                        NumberOfWindows = random.Next(),
+                        Area = random.Next()
+                    };
                 }
-                if(random.Next(5) > 0)
+                if (random.Next(5) > 0)
                 {
                     flats[i].Room = new Room
-                        {
-                            NumberOfDoors = random.Next(),
-                            NumberOfWindows = random.Next(),
-                            Area = random.Next()
-                        };
+                    {
+                        NumberOfDoors = random.Next(),
+                        NumberOfWindows = random.Next(),
+                        Area = random.Next()
+                    };
                 }
             }
             staticRunner = new SerializerRunner(flats, new StaticSerializer());
@@ -82,53 +87,53 @@ namespace Serialization
 
         public void Test()
         {
-            for(int i = 0; i < 100000; ++i)
+            for (int i = 0; i < 100000; ++i)
                 grobufRunner.Serialize();
         }
 
-        [Benchmark]
+        [BenchmarkCategory("Serialization"), Benchmark(Baseline = true)]
         public int StaticSerialize()
         {
             return staticRunner.Serialize();
         }
 
-        [Benchmark]
+        [BenchmarkCategory("Serialization"), Benchmark]
         public int DynamicSerialize()
         {
             return dynamicRunner.Serialize();
         }
 
-        [Benchmark]
+        [BenchmarkCategory("Deserialization"), Benchmark(Baseline = true)]
         public object StaticDeserialize()
         {
             return staticRunner.Deserialize();
         }
 
-        [Benchmark]
+        [BenchmarkCategory("Deserialization"), Benchmark]
         public object DynamicDeserialize()
         {
             return dynamicRunner.Deserialize();
         }
 
-        [Benchmark]
+        [BenchmarkCategory("Serialization"), Benchmark]
         public int GroBufSerialize()
         {
             return grobufRunner.Serialize();
         }
 
-        [Benchmark]
+        [BenchmarkCategory("Deserialization"), Benchmark]
         public object GroBufDeserialize()
         {
             return grobufRunner.Deserialize();
         }
 
-        [Benchmark]
+        [BenchmarkCategory("Serialization"), Benchmark]
         public int ProtoBufSerialize()
         {
             return protobufRunner.Serialize();
         }
 
-        [Benchmark]
+        [BenchmarkCategory("Deserialization"), Benchmark]
         public object ProtoBufDeserialize()
         {
             return protobufRunner.Deserialize();

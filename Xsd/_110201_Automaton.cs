@@ -1,4 +1,4 @@
-using System;
+Ôªøusing System;
 using System.Collections.Generic;
 using System.Globalization;
 
@@ -44,7 +44,7 @@ namespace Xsd
                 {
                 case 0:
                     {
-                        if (name == "‘‡ÈÎ")
+                        if (name == "–§–∞–π–ª")
                         {
                             state = 1;
                             depth = 1;
@@ -54,7 +54,7 @@ namespace Xsd
                             path.Push(name);
                             return result;
                         }
-                        result = new SchemaAutomatonError1(path.Count == 0 ? null : path.Peek(), name, new[] { "‘‡ÈÎ" });
+                        result = new SchemaAutomatonError1(path.Count == 0 ? null : path.Peek(), name, new[] { "–§–∞–π–ª" });
                         inFatalState = true;
                         {
                             state = -1;
@@ -64,7 +64,7 @@ namespace Xsd
                     }
                 case 1:
                     {
-                        if (name == "ƒÓÍÛÏÂÌÚ")
+                        if (name == "–î–æ–∫—É–º–µ–Ω—Ç")
                         {
                             state = 2;
                             depth = 2;
@@ -73,7 +73,7 @@ namespace Xsd
                             path.Push(name);
                             return result;
                         }
-                        result = new SchemaAutomatonError1(path.Count == 0 ? null : path.Peek(), name, new[] { "ƒÓÍÛÏÂÌÚ" });
+                        result = new SchemaAutomatonError1(path.Count == 0 ? null : path.Peek(), name, new[] { "–î–æ–∫—É–º–µ–Ω—Ç" });
                         inFatalState = true;
                         {
                             state = 20;
@@ -84,14 +84,14 @@ namespace Xsd
                     }
                 case 2:
                     {
-                        if (name == " ÌË„‡œÓ‰")
+                        if (name == "–ö–Ω–∏–≥–∞–ü—Ä–æ–¥")
                         {
                             state = 3;
                             depth = 3;
                             path.Push(name);
                             return result;
                         }
-                        result = new SchemaAutomatonError1(path.Count == 0 ? null : path.Peek(), name, new[] { " ÌË„‡œÓ‰" });
+                        result = new SchemaAutomatonError1(path.Count == 0 ? null : path.Peek(), name, new[] { "–ö–Ω–∏–≥–∞–ü—Ä–æ–¥" });
                         inFatalState = true;
                         {
                             state = 19;
@@ -102,7 +102,7 @@ namespace Xsd
                     }
                 case 3:
                     {
-                        if (name == " ÌœÓ‰—Ú")
+                        if (name == "–ö–Ω–ü—Ä–æ–¥–°—Ç—Ä")
                         {
                             state = 4;
                             depth = 4;
@@ -112,7 +112,7 @@ namespace Xsd
                             path.Push(name);
                             return result;
                         }
-                        result = new SchemaAutomatonError1(path.Count == 0 ? null : path.Peek(), name, new[] { " ÌœÓ‰—Ú" });
+                        result = new SchemaAutomatonError1(path.Count == 0 ? null : path.Peek(), name, new[] { "–ö–Ω–ü—Ä–æ–¥–°—Ç—Ä" });
                         inFatalState = true;
                         {
                             state = 18;
@@ -123,14 +123,14 @@ namespace Xsd
                     }
                 case 4:
                     {
-                        if (name == " Ó‰¬Ë‰ŒÔÂ")
+                        if (name == "–ö–æ–¥–í–∏–¥–û–ø–µ—Ä")
                         {
                             state = 5;
                             depth = 5;
                             path.Push(name);
                             return result;
                         }
-                        result = new SchemaAutomatonError1(path.Count == 0 ? null : path.Peek(), name, new[] { " Ó‰¬Ë‰ŒÔÂ" });
+                        result = new SchemaAutomatonError1(path.Count == 0 ? null : path.Peek(), name, new[] { "–ö–æ–¥–í–∏–¥–û–ø–µ—Ä" });
                         inFatalState = true;
                         {
                             state = 17;
@@ -152,14 +152,14 @@ namespace Xsd
                     }
                 case 6:
                     {
-                        if (name == " Ó‰¬Ë‰ŒÔÂ")
+                        if (name == "–ö–æ–¥–í–∏–¥–û–ø–µ—Ä")
                         {
                             state = 5;
                             depth = 5;
                             path.Push(name);
                             return result;
                         }
-                        if (name == "ƒÓÍœ‰Ú‚ŒÔÎ")
+                        if (name == "–î–æ–∫–ü–¥—Ç–≤–û–ø–ª")
                         {
                             state = 7;
                             depth = 5;
@@ -168,21 +168,21 @@ namespace Xsd
                             path.Push(name);
                             return result;
                         }
-                        if (name == "—‚œÓÍÛÔ")
+                        if (name == "–°–≤–ü–æ–∫—É–ø")
                         {
                             state = 9;
                             depth = 5;
                             path.Push(name);
                             return result;
                         }
-                        if (name == "—‚œÓÒ")
+                        if (name == "–°–≤–ü–æ—Å")
                         {
                             state = 13;
                             depth = 5;
                             path.Push(name);
                             return result;
                         }
-                        result = new SchemaAutomatonError1(path.Count == 0 ? null : path.Peek(), name, new[] { " Ó‰¬Ë‰ŒÔÂ", "ƒÓÍœ‰Ú‚ŒÔÎ", "—‚œÓÍÛÔ", "—‚œÓÒ" });
+                        result = new SchemaAutomatonError1(path.Count == 0 ? null : path.Peek(), name, new[] { "–ö–æ–¥–í–∏–¥–û–ø–µ—Ä", "–î–æ–∫–ü–¥—Ç–≤–û–ø–ª", "–°–≤–ü–æ–∫—É–ø", "–°–≤–ü–æ—Å" });
                         inFatalState = true;
                         {
                             state = 17;
@@ -204,7 +204,7 @@ namespace Xsd
                     }
                 case 8:
                     {
-                        if (name == "ƒÓÍœ‰Ú‚ŒÔÎ")
+                        if (name == "–î–æ–∫–ü–¥—Ç–≤–û–ø–ª")
                         {
                             state = 7;
                             depth = 5;
@@ -213,21 +213,21 @@ namespace Xsd
                             path.Push(name);
                             return result;
                         }
-                        if (name == "—‚œÓÍÛÔ")
+                        if (name == "–°–≤–ü–æ–∫—É–ø")
                         {
                             state = 9;
                             depth = 5;
                             path.Push(name);
                             return result;
                         }
-                        if (name == "—‚œÓÒ")
+                        if (name == "–°–≤–ü–æ—Å")
                         {
                             state = 13;
                             depth = 5;
                             path.Push(name);
                             return result;
                         }
-                        result = new SchemaAutomatonError1(path.Count == 0 ? null : path.Peek(), name, new[] { "ƒÓÍœ‰Ú‚ŒÔÎ", "—‚œÓÍÛÔ", "—‚œÓÒ" });
+                        result = new SchemaAutomatonError1(path.Count == 0 ? null : path.Peek(), name, new[] { "–î–æ–∫–ü–¥—Ç–≤–û–ø–ª", "–°–≤–ü–æ–∫—É–ø", "–°–≤–ü–æ—Å" });
                         inFatalState = true;
                         {
                             state = 17;
@@ -238,7 +238,7 @@ namespace Xsd
                     }
                 case 9:
                     {
-                        if (name == "—‚Â‰ﬁÀ")
+                        if (name == "–°–≤–µ–¥–Æ–õ")
                         {
                             state = 10;
                             depth = 6;
@@ -247,7 +247,7 @@ namespace Xsd
                             path.Push(name);
                             return result;
                         }
-                        if (name == "—‚Â‰»œ")
+                        if (name == "–°–≤–µ–¥–ò–ü")
                         {
                             state = 23;
                             depth = 6;
@@ -255,7 +255,7 @@ namespace Xsd
                             path.Push(name);
                             return result;
                         }
-                        result = new SchemaAutomatonError1(path.Count == 0 ? null : path.Peek(), name, new[] { "—‚Â‰ﬁÀ", "—‚Â‰»œ" });
+                        result = new SchemaAutomatonError1(path.Count == 0 ? null : path.Peek(), name, new[] { "–°–≤–µ–¥–Æ–õ", "–°–≤–µ–¥–ò–ü" });
                         inFatalState = true;
                         {
                             state = 12;
@@ -288,21 +288,21 @@ namespace Xsd
                     }
                 case 12:
                     {
-                        if (name == "—‚œÓÍÛÔ")
+                        if (name == "–°–≤–ü–æ–∫—É–ø")
                         {
                             state = 9;
                             depth = 5;
                             path.Push(name);
                             return result;
                         }
-                        if (name == "—‚œÓÒ")
+                        if (name == "–°–≤–ü–æ—Å")
                         {
                             state = 13;
                             depth = 5;
                             path.Push(name);
                             return result;
                         }
-                        result = new SchemaAutomatonError1(path.Count == 0 ? null : path.Peek(), name, new[] { "—‚œÓÍÛÔ", "—‚œÓÒ" });
+                        result = new SchemaAutomatonError1(path.Count == 0 ? null : path.Peek(), name, new[] { "–°–≤–ü–æ–∫—É–ø", "–°–≤–ü–æ—Å" });
                         inFatalState = true;
                         {
                             state = 17;
@@ -313,7 +313,7 @@ namespace Xsd
                     }
                 case 13:
                     {
-                        if (name == "—‚Â‰ﬁÀ")
+                        if (name == "–°–≤–µ–¥–Æ–õ")
                         {
                             state = 14;
                             depth = 6;
@@ -322,7 +322,7 @@ namespace Xsd
                             path.Push(name);
                             return result;
                         }
-                        if (name == "—‚Â‰»œ")
+                        if (name == "–°–≤–µ–¥–ò–ü")
                         {
                             state = 21;
                             depth = 6;
@@ -330,7 +330,7 @@ namespace Xsd
                             path.Push(name);
                             return result;
                         }
-                        result = new SchemaAutomatonError1(path.Count == 0 ? null : path.Peek(), name, new[] { "—‚Â‰ﬁÀ", "—‚Â‰»œ" });
+                        result = new SchemaAutomatonError1(path.Count == 0 ? null : path.Peek(), name, new[] { "–°–≤–µ–¥–Æ–õ", "–°–≤–µ–¥–ò–ü" });
                         inFatalState = true;
                         {
                             state = 16;
@@ -374,7 +374,7 @@ namespace Xsd
                     }
                 case 17:
                     {
-                        if (name == " ÌœÓ‰—Ú")
+                        if (name == "–ö–Ω–ü—Ä–æ–¥–°—Ç—Ä")
                         {
                             state = 4;
                             depth = 4;
@@ -384,7 +384,7 @@ namespace Xsd
                             path.Push(name);
                             return result;
                         }
-                        result = new SchemaAutomatonError1(path.Count == 0 ? null : path.Peek(), name, new[] { " ÌœÓ‰—Ú" });
+                        result = new SchemaAutomatonError1(path.Count == 0 ? null : path.Peek(), name, new[] { "–ö–Ω–ü—Ä–æ–¥–°—Ç—Ä" });
                         inFatalState = true;
                         {
                             state = 18;
@@ -486,7 +486,7 @@ namespace Xsd
 
                 case 0:
                     {
-                        result = new SchemaAutomatonError0(top, new[] { "‘‡ÈÎ" });
+                        result = new SchemaAutomatonError0(top, new[] { "–§–∞–π–ª" });
                         {
                             state = -1;
                         }
@@ -494,7 +494,7 @@ namespace Xsd
                     }
                 case 1:
                     {
-                        result = new SchemaAutomatonError0(top, new[] { "ƒÓÍÛÏÂÌÚ" });
+                        result = new SchemaAutomatonError0(top, new[] { "–î–æ–∫—É–º–µ–Ω—Ç" });
                         {
                             state = 20;
                             depth = 0;
@@ -503,13 +503,13 @@ namespace Xsd
                     }
                 case 2:
                     {
-                        if (top == "ƒÓÍÛÏÂÌÚ")
+                        if (top == "–î–æ–∫—É–º–µ–Ω—Ç")
                         {
                             state = 19;
                             depth = 1;
                             goto zzz;
                         }
-                        result = new SchemaAutomatonError0(top, new[] { " ÌË„‡œÓ‰", "ƒÓÍÛÏÂÌÚ" });
+                        result = new SchemaAutomatonError0(top, new[] { "–ö–Ω–∏–≥–∞–ü—Ä–æ–¥", "–î–æ–∫—É–º–µ–Ω—Ç" });
                         {
                             state = 19;
                             depth = 1;
@@ -518,7 +518,7 @@ namespace Xsd
                     }
                 case 3:
                     {
-                        result = new SchemaAutomatonError0(top, new[] { " ÌœÓ‰—Ú" });
+                        result = new SchemaAutomatonError0(top, new[] { "–ö–Ω–ü—Ä–æ–¥–°—Ç—Ä" });
                         {
                             state = 18;
                             depth = 2;
@@ -527,7 +527,7 @@ namespace Xsd
                     }
                 case 4:
                     {
-                        result = new SchemaAutomatonError0(top, new[] { " Ó‰¬Ë‰ŒÔÂ" });
+                        result = new SchemaAutomatonError0(top, new[] { "–ö–æ–¥–í–∏–¥–û–ø–µ—Ä" });
                         {
                             state = 17;
                             depth = 3;
@@ -536,13 +536,13 @@ namespace Xsd
                     }
                 case 5:
                     {
-                        if (top == " Ó‰¬Ë‰ŒÔÂ")
+                        if (top == "–ö–æ–¥–í–∏–¥–û–ø–µ—Ä")
                         {
                             state = 6;
                             depth = 4;
                             goto zzz;
                         }
-                        result = new SchemaAutomatonError0(top, new[] { " Ó‰¬Ë‰ŒÔÂ" });
+                        result = new SchemaAutomatonError0(top, new[] { "–ö–æ–¥–í–∏–¥–û–ø–µ—Ä" });
                         {
                             state = 6;
                             depth = 4;
@@ -551,13 +551,13 @@ namespace Xsd
                     }
                 case 6:
                     {
-                        if (top == " ÌœÓ‰—Ú")
+                        if (top == "–ö–Ω–ü—Ä–æ–¥–°—Ç—Ä")
                         {
                             state = 17;
                             depth = 3;
                             goto zzz;
                         }
-                        result = new SchemaAutomatonError0(top, new[] { " Ó‰¬Ë‰ŒÔÂ", "ƒÓÍœ‰Ú‚ŒÔÎ", "—‚œÓÍÛÔ", "—‚œÓÒ", " ÌœÓ‰—Ú" });
+                        result = new SchemaAutomatonError0(top, new[] { "–ö–æ–¥–í–∏–¥–û–ø–µ—Ä", "–î–æ–∫–ü–¥—Ç–≤–û–ø–ª", "–°–≤–ü–æ–∫—É–ø", "–°–≤–ü–æ—Å", "–ö–Ω–ü—Ä–æ–¥–°—Ç—Ä" });
                         {
                             state = 17;
                             depth = 3;
@@ -566,13 +566,13 @@ namespace Xsd
                     }
                 case 7:
                     {
-                        if (top == "ƒÓÍœ‰Ú‚ŒÔÎ")
+                        if (top == "–î–æ–∫–ü–¥—Ç–≤–û–ø–ª")
                         {
                             state = 8;
                             depth = 4;
                             goto zzz;
                         }
-                        result = new SchemaAutomatonError0(top, new[] { "ƒÓÍœ‰Ú‚ŒÔÎ" });
+                        result = new SchemaAutomatonError0(top, new[] { "–î–æ–∫–ü–¥—Ç–≤–û–ø–ª" });
                         {
                             state = 8;
                             depth = 4;
@@ -581,13 +581,13 @@ namespace Xsd
                     }
                 case 8:
                     {
-                        if (top == " ÌœÓ‰—Ú")
+                        if (top == "–ö–Ω–ü—Ä–æ–¥–°—Ç—Ä")
                         {
                             state = 17;
                             depth = 3;
                             goto zzz;
                         }
-                        result = new SchemaAutomatonError0(top, new[] { "ƒÓÍœ‰Ú‚ŒÔÎ", "—‚œÓÍÛÔ", "—‚œÓÒ", " ÌœÓ‰—Ú" });
+                        result = new SchemaAutomatonError0(top, new[] { "–î–æ–∫–ü–¥—Ç–≤–û–ø–ª", "–°–≤–ü–æ–∫—É–ø", "–°–≤–ü–æ—Å", "–ö–Ω–ü—Ä–æ–¥–°—Ç—Ä" });
                         {
                             state = 17;
                             depth = 3;
@@ -596,7 +596,7 @@ namespace Xsd
                     }
                 case 9:
                     {
-                        result = new SchemaAutomatonError0(top, new[] { "—‚Â‰ﬁÀ", "—‚Â‰»œ" });
+                        result = new SchemaAutomatonError0(top, new[] { "–°–≤–µ–¥–Æ–õ", "–°–≤–µ–¥–ò–ü" });
                         {
                             state = 12;
                             depth = 4;
@@ -605,13 +605,13 @@ namespace Xsd
                     }
                 case 10:
                     {
-                        if (top == "—‚Â‰ﬁÀ")
+                        if (top == "–°–≤–µ–¥–Æ–õ")
                         {
                             state = 11;
                             depth = 5;
                             goto zzz;
                         }
-                        result = new SchemaAutomatonError0(top, new[] { "—‚Â‰ﬁÀ" });
+                        result = new SchemaAutomatonError0(top, new[] { "–°–≤–µ–¥–Æ–õ" });
                         {
                             state = 11;
                             depth = 5;
@@ -620,13 +620,13 @@ namespace Xsd
                     }
                 case 11:
                     {
-                        if (top == "—‚œÓÍÛÔ")
+                        if (top == "–°–≤–ü–æ–∫—É–ø")
                         {
                             state = 12;
                             depth = 4;
                             goto zzz;
                         }
-                        result = new SchemaAutomatonError0(top, new[] { "—‚œÓÍÛÔ" });
+                        result = new SchemaAutomatonError0(top, new[] { "–°–≤–ü–æ–∫—É–ø" });
                         {
                             state = 12;
                             depth = 4;
@@ -635,13 +635,13 @@ namespace Xsd
                     }
                 case 12:
                     {
-                        if (top == " ÌœÓ‰—Ú")
+                        if (top == "–ö–Ω–ü—Ä–æ–¥–°—Ç—Ä")
                         {
                             state = 17;
                             depth = 3;
                             goto zzz;
                         }
-                        result = new SchemaAutomatonError0(top, new[] { "—‚œÓÍÛÔ", "—‚œÓÒ", " ÌœÓ‰—Ú" });
+                        result = new SchemaAutomatonError0(top, new[] { "–°–≤–ü–æ–∫—É–ø", "–°–≤–ü–æ—Å", "–ö–Ω–ü—Ä–æ–¥–°—Ç—Ä" });
                         {
                             state = 17;
                             depth = 3;
@@ -650,7 +650,7 @@ namespace Xsd
                     }
                 case 13:
                     {
-                        result = new SchemaAutomatonError0(top, new[] { "—‚Â‰ﬁÀ", "—‚Â‰»œ" });
+                        result = new SchemaAutomatonError0(top, new[] { "–°–≤–µ–¥–Æ–õ", "–°–≤–µ–¥–ò–ü" });
                         {
                             state = 16;
                             depth = 4;
@@ -659,13 +659,13 @@ namespace Xsd
                     }
                 case 14:
                     {
-                        if (top == "—‚Â‰ﬁÀ")
+                        if (top == "–°–≤–µ–¥–Æ–õ")
                         {
                             state = 15;
                             depth = 5;
                             goto zzz;
                         }
-                        result = new SchemaAutomatonError0(top, new[] { "—‚Â‰ﬁÀ" });
+                        result = new SchemaAutomatonError0(top, new[] { "–°–≤–µ–¥–Æ–õ" });
                         {
                             state = 15;
                             depth = 5;
@@ -674,13 +674,13 @@ namespace Xsd
                     }
                 case 15:
                     {
-                        if (top == "—‚œÓÒ")
+                        if (top == "–°–≤–ü–æ—Å")
                         {
                             state = 16;
                             depth = 4;
                             goto zzz;
                         }
-                        result = new SchemaAutomatonError0(top, new[] { "—‚œÓÒ" });
+                        result = new SchemaAutomatonError0(top, new[] { "–°–≤–ü–æ—Å" });
                         {
                             state = 16;
                             depth = 4;
@@ -689,13 +689,13 @@ namespace Xsd
                     }
                 case 16:
                     {
-                        if (top == " ÌœÓ‰—Ú")
+                        if (top == "–ö–Ω–ü—Ä–æ–¥–°—Ç—Ä")
                         {
                             state = 17;
                             depth = 3;
                             goto zzz;
                         }
-                        result = new SchemaAutomatonError0(top, new[] { " ÌœÓ‰—Ú" });
+                        result = new SchemaAutomatonError0(top, new[] { "–ö–Ω–ü—Ä–æ–¥–°—Ç—Ä" });
                         {
                             state = 17;
                             depth = 3;
@@ -704,13 +704,13 @@ namespace Xsd
                     }
                 case 17:
                     {
-                        if (top == " ÌË„‡œÓ‰")
+                        if (top == "–ö–Ω–∏–≥–∞–ü—Ä–æ–¥")
                         {
                             state = 18;
                             depth = 2;
                             goto zzz;
                         }
-                        result = new SchemaAutomatonError0(top, new[] { " ÌœÓ‰—Ú", " ÌË„‡œÓ‰" });
+                        result = new SchemaAutomatonError0(top, new[] { "–ö–Ω–ü—Ä–æ–¥–°—Ç—Ä", "–ö–Ω–∏–≥–∞–ü—Ä–æ–¥" });
                         {
                             state = 18;
                             depth = 2;
@@ -719,13 +719,13 @@ namespace Xsd
                     }
                 case 18:
                     {
-                        if (top == "ƒÓÍÛÏÂÌÚ")
+                        if (top == "–î–æ–∫—É–º–µ–Ω—Ç")
                         {
                             state = 19;
                             depth = 1;
                             goto zzz;
                         }
-                        result = new SchemaAutomatonError0(top, new[] { "ƒÓÍÛÏÂÌÚ" });
+                        result = new SchemaAutomatonError0(top, new[] { "–î–æ–∫—É–º–µ–Ω—Ç" });
                         {
                             state = 19;
                             depth = 1;
@@ -734,13 +734,13 @@ namespace Xsd
                     }
                 case 19:
                     {
-                        if (top == "‘‡ÈÎ")
+                        if (top == "–§–∞–π–ª")
                         {
                             state = 20;
                             depth = 0;
                             goto zzz;
                         }
-                        result = new SchemaAutomatonError0(top, new[] { "‘‡ÈÎ" });
+                        result = new SchemaAutomatonError0(top, new[] { "–§–∞–π–ª" });
                         {
                             state = 20;
                             depth = 0;
@@ -757,13 +757,13 @@ namespace Xsd
                     }
                 case 21:
                     {
-                        if (top == "—‚Â‰»œ")
+                        if (top == "–°–≤–µ–¥–ò–ü")
                         {
                             state = 22;
                             depth = 5;
                             goto zzz;
                         }
-                        result = new SchemaAutomatonError0(top, new[] { "—‚Â‰»œ" });
+                        result = new SchemaAutomatonError0(top, new[] { "–°–≤–µ–¥–ò–ü" });
                         {
                             state = 22;
                             depth = 5;
@@ -772,13 +772,13 @@ namespace Xsd
                     }
                 case 22:
                     {
-                        if (top == "—‚œÓÒ")
+                        if (top == "–°–≤–ü–æ—Å")
                         {
                             state = 16;
                             depth = 4;
                             goto zzz;
                         }
-                        result = new SchemaAutomatonError0(top, new[] { "—‚œÓÒ" });
+                        result = new SchemaAutomatonError0(top, new[] { "–°–≤–ü–æ—Å" });
                         {
                             state = 16;
                             depth = 4;
@@ -787,13 +787,13 @@ namespace Xsd
                     }
                 case 23:
                     {
-                        if (top == "—‚Â‰»œ")
+                        if (top == "–°–≤–µ–¥–ò–ü")
                         {
                             state = 24;
                             depth = 5;
                             goto zzz;
                         }
-                        result = new SchemaAutomatonError0(top, new[] { "—‚Â‰»œ" });
+                        result = new SchemaAutomatonError0(top, new[] { "–°–≤–µ–¥–ò–ü" });
                         {
                             state = 24;
                             depth = 5;
@@ -802,13 +802,13 @@ namespace Xsd
                     }
                 case 24:
                     {
-                        if (top == "—‚œÓÍÛÔ")
+                        if (top == "–°–≤–ü–æ–∫—É–ø")
                         {
                             state = 12;
                             depth = 4;
                             goto zzz;
                         }
-                        result = new SchemaAutomatonError0(top, new[] { "—‚œÓÍÛÔ" });
+                        result = new SchemaAutomatonError0(top, new[] { "–°–≤–ü–æ–∫—É–ø" });
                         {
                             state = 12;
                             depth = 4;
@@ -834,55 +834,55 @@ namespace Xsd
             {
             case 1:
                 {
-                    if (name == "»‰‘‡ÈÎ")
+                    if (name == "–ò–¥–§–∞–π–ª")
                     {
                         existances[0] = true;
                         if (string.IsNullOrEmpty(value))
-                            return new SchemaAutomatonError13("¿ÚË·ÛÚ", path.Peek());
+                            return new SchemaAutomatonError13("–ê—Ç—Ä–∏–±—É—Ç", path.Peek());
                         if (value.Length < 1)
-                            return new SchemaAutomatonError8("¿ÚË·ÛÚ", path.Peek(), value, 1);
+                            return new SchemaAutomatonError8("–ê—Ç—Ä–∏–±—É—Ç", path.Peek(), value, 1);
                         if (value.Length > 100)
-                            return new SchemaAutomatonError8("¿ÚË·ÛÚ", path.Peek(), value, 100);
+                            return new SchemaAutomatonError8("–ê—Ç—Ä–∏–±—É—Ç", path.Peek(), value, 100);
                         return null;
                     }
-                    if (name == "¬ÂÒœÓ„")
+                    if (name == "–í–µ—Ä—Å–ü—Ä–æ–≥")
                     {
                         existances[1] = true;
                         if (string.IsNullOrEmpty(value))
-                            return new SchemaAutomatonError13("¿ÚË·ÛÚ", path.Peek());
+                            return new SchemaAutomatonError13("–ê—Ç—Ä–∏–±—É—Ç", path.Peek());
                         if (value.Length < 1)
-                            return new SchemaAutomatonError8("¿ÚË·ÛÚ", path.Peek(), value, 1);
+                            return new SchemaAutomatonError8("–ê—Ç—Ä–∏–±—É—Ç", path.Peek(), value, 1);
                         if (value.Length > 40)
-                            return new SchemaAutomatonError8("¿ÚË·ÛÚ", path.Peek(), value, 40);
+                            return new SchemaAutomatonError8("–ê—Ç—Ä–∏–±—É—Ç", path.Peek(), value, 40);
                         return null;
                     }
-                    if (name == "¬ÂÒ‘ÓÏ")
+                    if (name == "–í–µ—Ä—Å–§–æ—Ä–º")
                     {
                         existances[2] = true;
                         if (string.IsNullOrEmpty(value))
-                            return new SchemaAutomatonError13("¿ÚË·ÛÚ", path.Peek());
+                            return new SchemaAutomatonError13("–ê—Ç—Ä–∏–±—É—Ç", path.Peek());
                         if (value.Length < 1)
-                            return new SchemaAutomatonError8("¿ÚË·ÛÚ", path.Peek(), value, 1);
+                            return new SchemaAutomatonError8("–ê—Ç—Ä–∏–±—É—Ç", path.Peek(), value, 1);
                         if (value.Length > 5)
-                            return new SchemaAutomatonError8("¿ÚË·ÛÚ", path.Peek(), value, 5);
+                            return new SchemaAutomatonError8("–ê—Ç—Ä–∏–±—É—Ç", path.Peek(), value, 5);
                         if (value == "5.04")
                             return null;
-                        return new SchemaAutomatonError9("¿ÚË·ÛÚ", path.Peek(), value, "enumeration", "5.04");
+                        return new SchemaAutomatonError9("–ê—Ç—Ä–∏–±—É—Ç", path.Peek(), value, "enumeration", "5.04");
                         return null;
                     }
                     return new SchemaAutomatonError3(name);
                 }
             case 2:
                 {
-                    if (name == "»Ì‰ÂÍÒ")
+                    if (name == "–ò–Ω–¥–µ–∫—Å")
                     {
                         existances[3] = true;
                         if (value == "0000090")
                             return null;
-                        return new SchemaAutomatonError9("¿ÚË·ÛÚ", path.Peek(), value, "enumeration", "0000090");
+                        return new SchemaAutomatonError9("–ê—Ç—Ä–∏–±—É—Ç", path.Peek(), value, "enumeration", "0000090");
                         return null;
                     }
-                    if (name == "ÕÓÏ Ó")
+                    if (name == "–ù–æ–º–ö–æ—Ä—Ä")
                     {
                         existances[4] = true;
                         decimal parsedDecimal = 0;
@@ -890,102 +890,102 @@ namespace Xsd
                             int actualTotalDigits, actualFractionDigits;
                             DecimalSimpleTypeExecutor.Check(value, out actualTotalDigits, out actualFractionDigits);
                             if (actualTotalDigits > 3)
-                                return new SchemaAutomatonError9("¿ÚË·ÛÚ", path.Peek(), value, "totalDigits", 3);
+                                return new SchemaAutomatonError9("–ê—Ç—Ä–∏–±—É—Ç", path.Peek(), value, "totalDigits", 3);
                         }
                         return null;
                     }
-                    if (name == "œËÁÌ—‚Â‰9")
+                    if (name == "–ü—Ä–∏–∑–Ω–°–≤–µ–¥9")
                     {
                         if (string.IsNullOrEmpty(value))
-                            return new SchemaAutomatonError13("¿ÚË·ÛÚ", path.Peek());
+                            return new SchemaAutomatonError13("–ê—Ç—Ä–∏–±—É—Ç", path.Peek());
                         if (value.Length != 1)
-                            return new SchemaAutomatonError6("¿ÚË·ÛÚ", path.Peek(), value, 1);
+                            return new SchemaAutomatonError6("–ê—Ç—Ä–∏–±—É—Ç", path.Peek(), value, 1);
                         if (value == "0")
                             return null;
                         if (value == "1")
                             return null;
-                        return new SchemaAutomatonError9("¿ÚË·ÛÚ", path.Peek(), value, "enumeration", "[0; 1]");
+                        return new SchemaAutomatonError9("–ê—Ç—Ä–∏–±—É—Ç", path.Peek(), value, "enumeration", "[0; 1]");
                         return null;
                     }
                     return new SchemaAutomatonError3(name);
                 }
             case 3:
                 {
-                    if (name == "—ÚœÓ‰¡ÂÁÕƒ—18")
+                    if (name == "–°—Ç–ü—Ä–æ–¥–ë–µ–∑–ù–î–°18")
                     {
                         decimal parsedDecimal = 0;
                         {
                             int actualTotalDigits, actualFractionDigits;
                             DecimalSimpleTypeExecutor.Check(value, out actualTotalDigits, out actualFractionDigits);
                             if (actualTotalDigits > 19)
-                                return new SchemaAutomatonError9("¿ÚË·ÛÚ", path.Peek(), value, "totalDigits", 19);
+                                return new SchemaAutomatonError9("–ê—Ç—Ä–∏–±—É—Ç", path.Peek(), value, "totalDigits", 19);
                             if (actualFractionDigits > 2)
-                                return new SchemaAutomatonError9("¿ÚË·ÛÚ", path.Peek(), value, "fractionDigits", 2);
+                                return new SchemaAutomatonError9("–ê—Ç—Ä–∏–±—É—Ç", path.Peek(), value, "fractionDigits", 2);
                         }
                         return null;
                     }
-                    if (name == "—ÚœÓ‰¡ÂÁÕƒ—10")
+                    if (name == "–°—Ç–ü—Ä–æ–¥–ë–µ–∑–ù–î–°10")
                     {
                         decimal parsedDecimal = 0;
                         {
                             int actualTotalDigits, actualFractionDigits;
                             DecimalSimpleTypeExecutor.Check(value, out actualTotalDigits, out actualFractionDigits);
                             if (actualTotalDigits > 19)
-                                return new SchemaAutomatonError9("¿ÚË·ÛÚ", path.Peek(), value, "totalDigits", 19);
+                                return new SchemaAutomatonError9("–ê—Ç—Ä–∏–±—É—Ç", path.Peek(), value, "totalDigits", 19);
                             if (actualFractionDigits > 2)
-                                return new SchemaAutomatonError9("¿ÚË·ÛÚ", path.Peek(), value, "fractionDigits", 2);
+                                return new SchemaAutomatonError9("–ê—Ç—Ä–∏–±—É—Ç", path.Peek(), value, "fractionDigits", 2);
                         }
                         return null;
                     }
-                    if (name == "—ÚœÓ‰¡ÂÁÕƒ—0")
+                    if (name == "–°—Ç–ü—Ä–æ–¥–ë–µ–∑–ù–î–°0")
                     {
                         decimal parsedDecimal = 0;
                         {
                             int actualTotalDigits, actualFractionDigits;
                             DecimalSimpleTypeExecutor.Check(value, out actualTotalDigits, out actualFractionDigits);
                             if (actualTotalDigits > 19)
-                                return new SchemaAutomatonError9("¿ÚË·ÛÚ", path.Peek(), value, "totalDigits", 19);
+                                return new SchemaAutomatonError9("–ê—Ç—Ä–∏–±—É—Ç", path.Peek(), value, "totalDigits", 19);
                             if (actualFractionDigits > 2)
-                                return new SchemaAutomatonError9("¿ÚË·ÛÚ", path.Peek(), value, "fractionDigits", 2);
+                                return new SchemaAutomatonError9("–ê—Ç—Ä–∏–±—É—Ç", path.Peek(), value, "fractionDigits", 2);
                         }
                         return null;
                     }
-                    if (name == "—ÛÏÕƒ—¬Ò œ18")
+                    if (name == "–°—É–º–ù–î–°–í—Å–ö–ü—Ä18")
                     {
                         decimal parsedDecimal = 0;
                         {
                             int actualTotalDigits, actualFractionDigits;
                             DecimalSimpleTypeExecutor.Check(value, out actualTotalDigits, out actualFractionDigits);
                             if (actualTotalDigits > 19)
-                                return new SchemaAutomatonError9("¿ÚË·ÛÚ", path.Peek(), value, "totalDigits", 19);
+                                return new SchemaAutomatonError9("–ê—Ç—Ä–∏–±—É—Ç", path.Peek(), value, "totalDigits", 19);
                             if (actualFractionDigits > 2)
-                                return new SchemaAutomatonError9("¿ÚË·ÛÚ", path.Peek(), value, "fractionDigits", 2);
+                                return new SchemaAutomatonError9("–ê—Ç—Ä–∏–±—É—Ç", path.Peek(), value, "fractionDigits", 2);
                         }
                         return null;
                     }
-                    if (name == "—ÛÏÕƒ—¬Ò œ10")
+                    if (name == "–°—É–º–ù–î–°–í—Å–ö–ü—Ä10")
                     {
                         decimal parsedDecimal = 0;
                         {
                             int actualTotalDigits, actualFractionDigits;
                             DecimalSimpleTypeExecutor.Check(value, out actualTotalDigits, out actualFractionDigits);
                             if (actualTotalDigits > 19)
-                                return new SchemaAutomatonError9("¿ÚË·ÛÚ", path.Peek(), value, "totalDigits", 19);
+                                return new SchemaAutomatonError9("–ê—Ç—Ä–∏–±—É—Ç", path.Peek(), value, "totalDigits", 19);
                             if (actualFractionDigits > 2)
-                                return new SchemaAutomatonError9("¿ÚË·ÛÚ", path.Peek(), value, "fractionDigits", 2);
+                                return new SchemaAutomatonError9("–ê—Ç—Ä–∏–±—É—Ç", path.Peek(), value, "fractionDigits", 2);
                         }
                         return null;
                     }
-                    if (name == "—ÚœÓ‰ŒÒ‚¬Ò œ")
+                    if (name == "–°—Ç–ü—Ä–æ–¥–û—Å–≤–í—Å–ö–ü—Ä")
                     {
                         decimal parsedDecimal = 0;
                         {
                             int actualTotalDigits, actualFractionDigits;
                             DecimalSimpleTypeExecutor.Check(value, out actualTotalDigits, out actualFractionDigits);
                             if (actualTotalDigits > 19)
-                                return new SchemaAutomatonError9("¿ÚË·ÛÚ", path.Peek(), value, "totalDigits", 19);
+                                return new SchemaAutomatonError9("–ê—Ç—Ä–∏–±—É—Ç", path.Peek(), value, "totalDigits", 19);
                             if (actualFractionDigits > 2)
-                                return new SchemaAutomatonError9("¿ÚË·ÛÚ", path.Peek(), value, "fractionDigits", 2);
+                                return new SchemaAutomatonError9("–ê—Ç—Ä–∏–±—É—Ç", path.Peek(), value, "fractionDigits", 2);
                         }
                         return null;
                     }
@@ -993,212 +993,212 @@ namespace Xsd
                 }
             case 4:
                 {
-                    if (name == "ÕÓÏÂœÓ")
+                    if (name == "–ù–æ–º–µ—Ä–ü–æ—Ä")
                     {
                         existances[5] = true;
                         decimal parsedDecimal = 0;
                         parsedDecimal = decimal.Parse(value, decimalStyle, CultureInfo.InvariantCulture);
                         if (parsedDecimal.CompareTo(1m) < 0)
-                            return new SchemaAutomatonError9("¿ÚË·ÛÚ", path.Peek(), value, "minInclusive", 1);
+                            return new SchemaAutomatonError9("–ê—Ç—Ä–∏–±—É—Ç", path.Peek(), value, "minInclusive", 1);
                         {
                             int actualTotalDigits, actualFractionDigits;
                             DecimalSimpleTypeExecutor.Check(value, out actualTotalDigits, out actualFractionDigits);
                             if (actualTotalDigits > 12)
-                                return new SchemaAutomatonError9("¿ÚË·ÛÚ", path.Peek(), value, "totalDigits", 12);
+                                return new SchemaAutomatonError9("–ê—Ç—Ä–∏–±—É—Ç", path.Peek(), value, "totalDigits", 12);
                         }
                         return null;
                     }
-                    if (name == "ÕÓÏ—˜‘œÓ‰")
+                    if (name == "–ù–æ–º–°—á–§–ü—Ä–æ–¥")
                     {
                         existances[6] = true;
                         if (string.IsNullOrEmpty(value))
-                            return new SchemaAutomatonError13("¿ÚË·ÛÚ", path.Peek());
+                            return new SchemaAutomatonError13("–ê—Ç—Ä–∏–±—É—Ç", path.Peek());
                         if (value.Length < 1)
-                            return new SchemaAutomatonError8("¿ÚË·ÛÚ", path.Peek(), value, 1);
+                            return new SchemaAutomatonError8("–ê—Ç—Ä–∏–±—É—Ç", path.Peek(), value, 1);
                         if (value.Length > 1000)
-                            return new SchemaAutomatonError8("¿ÚË·ÛÚ", path.Peek(), value, 1000);
+                            return new SchemaAutomatonError8("–ê—Ç—Ä–∏–±—É—Ç", path.Peek(), value, 1000);
                         return null;
                     }
-                    if (name == "ƒ‡Ú‡—˜‘œÓ‰")
+                    if (name == "–î–∞—Ç–∞–°—á–§–ü—Ä–æ–¥")
                     {
                         existances[7] = true;
                         if (string.IsNullOrEmpty(value))
-                            return new SchemaAutomatonError13("¿ÚË·ÛÚ", path.Peek());
+                            return new SchemaAutomatonError13("–ê—Ç—Ä–∏–±—É—Ç", path.Peek());
                         if (value.Length != 10)
-                            return new SchemaAutomatonError6("¿ÚË·ÛÚ", path.Peek(), value, 10);
+                            return new SchemaAutomatonError6("–ê—Ç—Ä–∏–±—É—Ç", path.Peek(), value, 10);
                         return null;
                     }
-                    if (name == "ÕÓÏ»ÒÔ—˜‘")
+                    if (name == "–ù–æ–º–ò—Å–ø—Ä–°—á–§")
                     {
                         decimal parsedDecimal = 0;
                         parsedDecimal = decimal.Parse(value, decimalStyle, CultureInfo.InvariantCulture);
                         if (parsedDecimal.CompareTo(1m) < 0)
-                            return new SchemaAutomatonError9("¿ÚË·ÛÚ", path.Peek(), value, "minInclusive", 1);
+                            return new SchemaAutomatonError9("–ê—Ç—Ä–∏–±—É—Ç", path.Peek(), value, "minInclusive", 1);
                         {
                             int actualTotalDigits, actualFractionDigits;
                             DecimalSimpleTypeExecutor.Check(value, out actualTotalDigits, out actualFractionDigits);
                             if (actualTotalDigits > 3)
-                                return new SchemaAutomatonError9("¿ÚË·ÛÚ", path.Peek(), value, "totalDigits", 3);
+                                return new SchemaAutomatonError9("–ê—Ç—Ä–∏–±—É—Ç", path.Peek(), value, "totalDigits", 3);
                         }
                         return null;
                     }
-                    if (name == "ƒ‡Ú‡»ÒÔ—˜‘")
+                    if (name == "–î–∞—Ç–∞–ò—Å–ø—Ä–°—á–§")
                     {
                         if (string.IsNullOrEmpty(value))
-                            return new SchemaAutomatonError13("¿ÚË·ÛÚ", path.Peek());
+                            return new SchemaAutomatonError13("–ê—Ç—Ä–∏–±—É—Ç", path.Peek());
                         if (value.Length != 10)
-                            return new SchemaAutomatonError6("¿ÚË·ÛÚ", path.Peek(), value, 10);
+                            return new SchemaAutomatonError6("–ê—Ç—Ä–∏–±—É—Ç", path.Peek(), value, 10);
                         return null;
                     }
-                    if (name == "ÕÓÏ —˜‘œÓ‰")
+                    if (name == "–ù–æ–º–ö–°—á–§–ü—Ä–æ–¥")
                     {
                         if (string.IsNullOrEmpty(value))
-                            return new SchemaAutomatonError13("¿ÚË·ÛÚ", path.Peek());
+                            return new SchemaAutomatonError13("–ê—Ç—Ä–∏–±—É—Ç", path.Peek());
                         if (value.Length < 1)
-                            return new SchemaAutomatonError8("¿ÚË·ÛÚ", path.Peek(), value, 1);
+                            return new SchemaAutomatonError8("–ê—Ç—Ä–∏–±—É—Ç", path.Peek(), value, 1);
                         if (value.Length > 256)
-                            return new SchemaAutomatonError8("¿ÚË·ÛÚ", path.Peek(), value, 256);
+                            return new SchemaAutomatonError8("–ê—Ç—Ä–∏–±—É—Ç", path.Peek(), value, 256);
                         return null;
                     }
-                    if (name == "ƒ‡Ú‡ —˜‘œÓ‰")
+                    if (name == "–î–∞—Ç–∞–ö–°—á–§–ü—Ä–æ–¥")
                     {
                         if (string.IsNullOrEmpty(value))
-                            return new SchemaAutomatonError13("¿ÚË·ÛÚ", path.Peek());
+                            return new SchemaAutomatonError13("–ê—Ç—Ä–∏–±—É—Ç", path.Peek());
                         if (value.Length != 10)
-                            return new SchemaAutomatonError6("¿ÚË·ÛÚ", path.Peek(), value, 10);
+                            return new SchemaAutomatonError6("–ê—Ç—Ä–∏–±—É—Ç", path.Peek(), value, 10);
                         return null;
                     }
-                    if (name == "ÕÓÏ»ÒÔ —˜‘")
+                    if (name == "–ù–æ–º–ò—Å–ø—Ä–ö–°—á–§")
                     {
                         decimal parsedDecimal = 0;
                         parsedDecimal = decimal.Parse(value, decimalStyle, CultureInfo.InvariantCulture);
                         if (parsedDecimal.CompareTo(1m) < 0)
-                            return new SchemaAutomatonError9("¿ÚË·ÛÚ", path.Peek(), value, "minInclusive", 1);
+                            return new SchemaAutomatonError9("–ê—Ç—Ä–∏–±—É—Ç", path.Peek(), value, "minInclusive", 1);
                         {
                             int actualTotalDigits, actualFractionDigits;
                             DecimalSimpleTypeExecutor.Check(value, out actualTotalDigits, out actualFractionDigits);
                             if (actualTotalDigits > 3)
-                                return new SchemaAutomatonError9("¿ÚË·ÛÚ", path.Peek(), value, "totalDigits", 3);
+                                return new SchemaAutomatonError9("–ê—Ç—Ä–∏–±—É—Ç", path.Peek(), value, "totalDigits", 3);
                         }
                         return null;
                     }
-                    if (name == "ƒ‡Ú‡»ÒÔ —˜‘")
+                    if (name == "–î–∞—Ç–∞–ò—Å–ø—Ä–ö–°—á–§")
                     {
                         if (string.IsNullOrEmpty(value))
-                            return new SchemaAutomatonError13("¿ÚË·ÛÚ", path.Peek());
+                            return new SchemaAutomatonError13("–ê—Ç—Ä–∏–±—É—Ç", path.Peek());
                         if (value.Length != 10)
-                            return new SchemaAutomatonError6("¿ÚË·ÛÚ", path.Peek(), value, 10);
+                            return new SchemaAutomatonError6("–ê—Ç—Ä–∏–±—É—Ç", path.Peek(), value, 10);
                         return null;
                     }
-                    if (name == "Œ ¬")
+                    if (name == "–û–ö–í")
                     {
                         if (string.IsNullOrEmpty(value))
-                            return new SchemaAutomatonError13("¿ÚË·ÛÚ", path.Peek());
+                            return new SchemaAutomatonError13("–ê—Ç—Ä–∏–±—É—Ç", path.Peek());
                         if (value.Length != 3)
-                            return new SchemaAutomatonError6("¿ÚË·ÛÚ", path.Peek(), value, 3);
+                            return new SchemaAutomatonError6("–ê—Ç—Ä–∏–±—É—Ç", path.Peek(), value, 3);
                         return null;
                     }
-                    if (name == "—ÚÓËÏœÓ‰—‘¬")
+                    if (name == "–°—Ç–æ–∏–º–ü—Ä–æ–¥–°–§–í")
                     {
                         decimal parsedDecimal = 0;
                         {
                             int actualTotalDigits, actualFractionDigits;
                             DecimalSimpleTypeExecutor.Check(value, out actualTotalDigits, out actualFractionDigits);
                             if (actualTotalDigits > 19)
-                                return new SchemaAutomatonError9("¿ÚË·ÛÚ", path.Peek(), value, "totalDigits", 19);
+                                return new SchemaAutomatonError9("–ê—Ç—Ä–∏–±—É—Ç", path.Peek(), value, "totalDigits", 19);
                             if (actualFractionDigits > 2)
-                                return new SchemaAutomatonError9("¿ÚË·ÛÚ", path.Peek(), value, "fractionDigits", 2);
+                                return new SchemaAutomatonError9("–ê—Ç—Ä–∏–±—É—Ç", path.Peek(), value, "fractionDigits", 2);
                         }
                         return null;
                     }
-                    if (name == "—ÚÓËÏœÓ‰—‘")
+                    if (name == "–°—Ç–æ–∏–º–ü—Ä–æ–¥–°–§")
                     {
                         decimal parsedDecimal = 0;
                         {
                             int actualTotalDigits, actualFractionDigits;
                             DecimalSimpleTypeExecutor.Check(value, out actualTotalDigits, out actualFractionDigits);
                             if (actualTotalDigits > 19)
-                                return new SchemaAutomatonError9("¿ÚË·ÛÚ", path.Peek(), value, "totalDigits", 19);
+                                return new SchemaAutomatonError9("–ê—Ç—Ä–∏–±—É—Ç", path.Peek(), value, "totalDigits", 19);
                             if (actualFractionDigits > 2)
-                                return new SchemaAutomatonError9("¿ÚË·ÛÚ", path.Peek(), value, "fractionDigits", 2);
+                                return new SchemaAutomatonError9("–ê—Ç—Ä–∏–±—É—Ç", path.Peek(), value, "fractionDigits", 2);
                         }
                         return null;
                     }
-                    if (name == "—ÚÓËÏœÓ‰—‘18")
+                    if (name == "–°—Ç–æ–∏–º–ü—Ä–æ–¥–°–§18")
                     {
                         decimal parsedDecimal = 0;
                         {
                             int actualTotalDigits, actualFractionDigits;
                             DecimalSimpleTypeExecutor.Check(value, out actualTotalDigits, out actualFractionDigits);
                             if (actualTotalDigits > 19)
-                                return new SchemaAutomatonError9("¿ÚË·ÛÚ", path.Peek(), value, "totalDigits", 19);
+                                return new SchemaAutomatonError9("–ê—Ç—Ä–∏–±—É—Ç", path.Peek(), value, "totalDigits", 19);
                             if (actualFractionDigits > 2)
-                                return new SchemaAutomatonError9("¿ÚË·ÛÚ", path.Peek(), value, "fractionDigits", 2);
+                                return new SchemaAutomatonError9("–ê—Ç—Ä–∏–±—É—Ç", path.Peek(), value, "fractionDigits", 2);
                         }
                         return null;
                     }
-                    if (name == "—ÚÓËÏœÓ‰—‘10")
+                    if (name == "–°—Ç–æ–∏–º–ü—Ä–æ–¥–°–§10")
                     {
                         decimal parsedDecimal = 0;
                         {
                             int actualTotalDigits, actualFractionDigits;
                             DecimalSimpleTypeExecutor.Check(value, out actualTotalDigits, out actualFractionDigits);
                             if (actualTotalDigits > 19)
-                                return new SchemaAutomatonError9("¿ÚË·ÛÚ", path.Peek(), value, "totalDigits", 19);
+                                return new SchemaAutomatonError9("–ê—Ç—Ä–∏–±—É—Ç", path.Peek(), value, "totalDigits", 19);
                             if (actualFractionDigits > 2)
-                                return new SchemaAutomatonError9("¿ÚË·ÛÚ", path.Peek(), value, "fractionDigits", 2);
+                                return new SchemaAutomatonError9("–ê—Ç—Ä–∏–±—É—Ç", path.Peek(), value, "fractionDigits", 2);
                         }
                         return null;
                     }
-                    if (name == "—ÚÓËÏœÓ‰—‘0")
+                    if (name == "–°—Ç–æ–∏–º–ü—Ä–æ–¥–°–§0")
                     {
                         decimal parsedDecimal = 0;
                         {
                             int actualTotalDigits, actualFractionDigits;
                             DecimalSimpleTypeExecutor.Check(value, out actualTotalDigits, out actualFractionDigits);
                             if (actualTotalDigits > 19)
-                                return new SchemaAutomatonError9("¿ÚË·ÛÚ", path.Peek(), value, "totalDigits", 19);
+                                return new SchemaAutomatonError9("–ê—Ç—Ä–∏–±—É—Ç", path.Peek(), value, "totalDigits", 19);
                             if (actualFractionDigits > 2)
-                                return new SchemaAutomatonError9("¿ÚË·ÛÚ", path.Peek(), value, "fractionDigits", 2);
+                                return new SchemaAutomatonError9("–ê—Ç—Ä–∏–±—É—Ç", path.Peek(), value, "fractionDigits", 2);
                         }
                         return null;
                     }
-                    if (name == "—ÛÏÕƒ——‘18")
+                    if (name == "–°—É–º–ù–î–°–°–§18")
                     {
                         decimal parsedDecimal = 0;
                         {
                             int actualTotalDigits, actualFractionDigits;
                             DecimalSimpleTypeExecutor.Check(value, out actualTotalDigits, out actualFractionDigits);
                             if (actualTotalDigits > 19)
-                                return new SchemaAutomatonError9("¿ÚË·ÛÚ", path.Peek(), value, "totalDigits", 19);
+                                return new SchemaAutomatonError9("–ê—Ç—Ä–∏–±—É—Ç", path.Peek(), value, "totalDigits", 19);
                             if (actualFractionDigits > 2)
-                                return new SchemaAutomatonError9("¿ÚË·ÛÚ", path.Peek(), value, "fractionDigits", 2);
+                                return new SchemaAutomatonError9("–ê—Ç—Ä–∏–±—É—Ç", path.Peek(), value, "fractionDigits", 2);
                         }
                         return null;
                     }
-                    if (name == "—ÛÏÕƒ——‘10")
+                    if (name == "–°—É–º–ù–î–°–°–§10")
                     {
                         decimal parsedDecimal = 0;
                         {
                             int actualTotalDigits, actualFractionDigits;
                             DecimalSimpleTypeExecutor.Check(value, out actualTotalDigits, out actualFractionDigits);
                             if (actualTotalDigits > 19)
-                                return new SchemaAutomatonError9("¿ÚË·ÛÚ", path.Peek(), value, "totalDigits", 19);
+                                return new SchemaAutomatonError9("–ê—Ç—Ä–∏–±—É—Ç", path.Peek(), value, "totalDigits", 19);
                             if (actualFractionDigits > 2)
-                                return new SchemaAutomatonError9("¿ÚË·ÛÚ", path.Peek(), value, "fractionDigits", 2);
+                                return new SchemaAutomatonError9("–ê—Ç—Ä–∏–±—É—Ç", path.Peek(), value, "fractionDigits", 2);
                         }
                         return null;
                     }
-                    if (name == "—ÚÓËÏœÓ‰ŒÒ‚")
+                    if (name == "–°—Ç–æ–∏–º–ü—Ä–æ–¥–û—Å–≤")
                     {
                         decimal parsedDecimal = 0;
                         {
                             int actualTotalDigits, actualFractionDigits;
                             DecimalSimpleTypeExecutor.Check(value, out actualTotalDigits, out actualFractionDigits);
                             if (actualTotalDigits > 19)
-                                return new SchemaAutomatonError9("¿ÚË·ÛÚ", path.Peek(), value, "totalDigits", 19);
+                                return new SchemaAutomatonError9("–ê—Ç—Ä–∏–±—É—Ç", path.Peek(), value, "totalDigits", 19);
                             if (actualFractionDigits > 2)
-                                return new SchemaAutomatonError9("¿ÚË·ÛÚ", path.Peek(), value, "fractionDigits", 2);
+                                return new SchemaAutomatonError9("–ê—Ç—Ä–∏–±—É—Ç", path.Peek(), value, "fractionDigits", 2);
                         }
                         return null;
                     }
@@ -1206,94 +1206,94 @@ namespace Xsd
                 }
             case 7:
                 {
-                    if (name == "ÕÓÏƒÓÍœ‰Ú‚ŒÔÎ")
+                    if (name == "–ù–æ–º–î–æ–∫–ü–¥—Ç–≤–û–ø–ª")
                     {
                         existances[8] = true;
                         if (string.IsNullOrEmpty(value))
-                            return new SchemaAutomatonError13("¿ÚË·ÛÚ", path.Peek());
+                            return new SchemaAutomatonError13("–ê—Ç—Ä–∏–±—É—Ç", path.Peek());
                         if (value.Length < 1)
-                            return new SchemaAutomatonError8("¿ÚË·ÛÚ", path.Peek(), value, 1);
+                            return new SchemaAutomatonError8("–ê—Ç—Ä–∏–±—É—Ç", path.Peek(), value, 1);
                         if (value.Length > 256)
-                            return new SchemaAutomatonError8("¿ÚË·ÛÚ", path.Peek(), value, 256);
+                            return new SchemaAutomatonError8("–ê—Ç—Ä–∏–±—É—Ç", path.Peek(), value, 256);
                         return null;
                     }
-                    if (name == "ƒ‡Ú‡ƒÓÍœ‰Ú‚ŒÔÎ")
+                    if (name == "–î–∞—Ç–∞–î–æ–∫–ü–¥—Ç–≤–û–ø–ª")
                     {
                         existances[9] = true;
                         if (string.IsNullOrEmpty(value))
-                            return new SchemaAutomatonError13("¿ÚË·ÛÚ", path.Peek());
+                            return new SchemaAutomatonError13("–ê—Ç—Ä–∏–±—É—Ç", path.Peek());
                         if (value.Length != 10)
-                            return new SchemaAutomatonError6("¿ÚË·ÛÚ", path.Peek(), value, 10);
+                            return new SchemaAutomatonError6("–ê—Ç—Ä–∏–±—É—Ç", path.Peek(), value, 10);
                         return null;
                     }
                     return new SchemaAutomatonError3(name);
                 }
             case 10:
                 {
-                    if (name == "»ÕÕﬁÀ")
+                    if (name == "–ò–ù–ù–Æ–õ")
                     {
                         existances[10] = true;
                         if (string.IsNullOrEmpty(value))
-                            return new SchemaAutomatonError13("¿ÚË·ÛÚ", path.Peek());
+                            return new SchemaAutomatonError13("–ê—Ç—Ä–∏–±—É—Ç", path.Peek());
                         if (value.Length != 10)
-                            return new SchemaAutomatonError6("¿ÚË·ÛÚ", path.Peek(), value, 10);
+                            return new SchemaAutomatonError6("–ê—Ç—Ä–∏–±—É—Ç", path.Peek(), value, 10);
                         return null;
                     }
-                    if (name == " œœ")
+                    if (name == "–ö–ü–ü")
                     {
                         existances[11] = true;
                         if (string.IsNullOrEmpty(value))
-                            return new SchemaAutomatonError13("¿ÚË·ÛÚ", path.Peek());
+                            return new SchemaAutomatonError13("–ê—Ç—Ä–∏–±—É—Ç", path.Peek());
                         if (value.Length != 9)
-                            return new SchemaAutomatonError6("¿ÚË·ÛÚ", path.Peek(), value, 9);
+                            return new SchemaAutomatonError6("–ê—Ç—Ä–∏–±—É—Ç", path.Peek(), value, 9);
                         return null;
                     }
                     return new SchemaAutomatonError3(name);
                 }
             case 14:
                 {
-                    if (name == "»ÕÕﬁÀ")
+                    if (name == "–ò–ù–ù–Æ–õ")
                     {
                         existances[13] = true;
                         if (string.IsNullOrEmpty(value))
-                            return new SchemaAutomatonError13("¿ÚË·ÛÚ", path.Peek());
+                            return new SchemaAutomatonError13("–ê—Ç—Ä–∏–±—É—Ç", path.Peek());
                         if (value.Length != 10)
-                            return new SchemaAutomatonError6("¿ÚË·ÛÚ", path.Peek(), value, 10);
+                            return new SchemaAutomatonError6("–ê—Ç—Ä–∏–±—É—Ç", path.Peek(), value, 10);
                         return null;
                     }
-                    if (name == " œœ")
+                    if (name == "–ö–ü–ü")
                     {
                         existances[14] = true;
                         if (string.IsNullOrEmpty(value))
-                            return new SchemaAutomatonError13("¿ÚË·ÛÚ", path.Peek());
+                            return new SchemaAutomatonError13("–ê—Ç—Ä–∏–±—É—Ç", path.Peek());
                         if (value.Length != 9)
-                            return new SchemaAutomatonError6("¿ÚË·ÛÚ", path.Peek(), value, 9);
+                            return new SchemaAutomatonError6("–ê—Ç—Ä–∏–±—É—Ç", path.Peek(), value, 9);
                         return null;
                     }
                     return new SchemaAutomatonError3(name);
                 }
             case 21:
                 {
-                    if (name == "»ÕÕ‘À")
+                    if (name == "–ò–ù–ù–§–õ")
                     {
                         existances[15] = true;
                         if (string.IsNullOrEmpty(value))
-                            return new SchemaAutomatonError13("¿ÚË·ÛÚ", path.Peek());
+                            return new SchemaAutomatonError13("–ê—Ç—Ä–∏–±—É—Ç", path.Peek());
                         if (value.Length != 12)
-                            return new SchemaAutomatonError6("¿ÚË·ÛÚ", path.Peek(), value, 12);
+                            return new SchemaAutomatonError6("–ê—Ç—Ä–∏–±—É—Ç", path.Peek(), value, 12);
                         return null;
                     }
                     return new SchemaAutomatonError3(name);
                 }
             case 23:
                 {
-                    if (name == "»ÕÕ‘À")
+                    if (name == "–ò–ù–ù–§–õ")
                     {
                         existances[12] = true;
                         if (string.IsNullOrEmpty(value))
-                            return new SchemaAutomatonError13("¿ÚË·ÛÚ", path.Peek());
+                            return new SchemaAutomatonError13("–ê—Ç—Ä–∏–±—É—Ç", path.Peek());
                         if (value.Length != 12)
-                            return new SchemaAutomatonError6("¿ÚË·ÛÚ", path.Peek(), value, 12);
+                            return new SchemaAutomatonError6("–ê—Ç—Ä–∏–±—É—Ç", path.Peek(), value, 12);
                         return null;
                     }
                     return new SchemaAutomatonError3(name);
@@ -1308,9 +1308,9 @@ namespace Xsd
             if (inFatalState) return null;
             if (state != 5) return null;
             if (string.IsNullOrEmpty(text))
-                return new SchemaAutomatonError13("›ÎÂÏÂÌÚ", path.Peek());
+                return new SchemaAutomatonError13("–≠–ª–µ–º–µ–Ω—Ç", path.Peek());
             if (text.Length != 2)
-                return new SchemaAutomatonError6("›ÎÂÏÂÌÚ", path.Peek(), text, 2);
+                return new SchemaAutomatonError6("–≠–ª–µ–º–µ–Ω—Ç", path.Peek(), text, 2);
             if (text[0] == '0')
             {
                 if (map0[text[1]])
@@ -1326,7 +1326,7 @@ namespace Xsd
                 if (map2[text[1]])
                     return null;
             }
-            return new SchemaAutomatonError9("›ÎÂÏÂÌÚ", path.Peek(), text, "enumeration", "long list of values");
+            return new SchemaAutomatonError9("–≠–ª–µ–º–µ–Ω—Ç", path.Peek(), text, "enumeration", "long list of values");
         }
 
         private int state;
