@@ -1,19 +1,13 @@
-#CodeGenPerfTests
-
-Здесь находятся сэмплы с доклада "Кодогенерация для оптимизации" с .NEXT 2016 Spb.
-
-##Regex
-
-Файл с данными взят с http://lh3lh3.users.sourceforge.net/reb.shtml.
-
-##Xsd
-
-Для получения результатов из доклада нужно из всех бенчмарков вычесть время бенчмарка Scan (это время чтения файла с данными и его не нужно учитывать).
-
-##SwitchChars и SwitchStrings
-
-Для получения результатов нужно из всех бенчмарков вычесть время бенчмарка Empty (это время шаффла исходных данных, чтобы бранчпредиктор меньше влиял на результат).
-
-##Serialization
-
-Для получения результатов сравнения GroBuf и ProtoBuf запустить бенчмарк "big_mixed".
+# CodeGenPerfTests
+Code smaples for presentation "Code generation for performance optimization". The author is Igor Chevdar
+### Regex
+Examples of regex performance benchmarks: http://lh3lh3.users.sourceforge.net/reb.shtml.
+### Xsd
+The execution time of the benchmark method Scan should be subtracted from execution time other benchmarks methods (this is a time of reading data file)
+### SwitchChars Рё SwitchStrings
+The execution time of the benchmark method Empty should be subtracted from the execution time of other benchmarks methods (this is a time of shuffling source data to minimize branch predictor influence)
+### Serialization
+To get benchmark results of comparison ProtoBuf and ProtoBuf you should run benchmark "big_mixed"
+### Running benchmarks
+First of all, you should compile the solution with the release configuration. 
+If you need to get benchmark results for Mono, you should install Mono x64 first and then run the compiled project under the .net 4.8 platform.

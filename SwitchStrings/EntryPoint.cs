@@ -42,7 +42,7 @@ namespace SwitchStrings
             Console.WriteLine(UnrolledBSWithFastHash());
         }
 
-        // Время работы этого метода нужно вычесть из каждого бенчмарка - это некий сетап, не являющийся частью алгоритма
+        // The execution time of this method should be subtracted from execution time other benchmarks methods - this method is kind of setup and is not part of algorithm
         [Benchmark(Baseline = true)]
         public int Empty()
         {
